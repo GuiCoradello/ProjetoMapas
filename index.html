@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>projeto Mapa</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body class="app">
+  <header>
+    <section class="box__header">
+
+      <h1>CT PRO-FIGTH</h1>
+      <div class="box__addAlunos--botao">
+
+        <input type="button" value="Cadastrar Aluno" class="botao__add--Cadastro" data-botaoCadastroUser>
+
+      </div>
+    </section>
+  </header>
+
+  <div class="box__cadastro display--none" data-modalCadastro>
+    <form class=' forms__cadastro'>
+      <input type="text" class="input--Cadastro" data-nomeAluno placeholder="Nome">
+      <input type="text" class="input--Cadastro" data-enderecoAluno placeholder="Endereço">
+      <select name="nivel-graduaçao" class="select--Graduacao">
+        <option value="Selecione">Selecione a Graduação </option>
+        <option value="">Faixa branca</option>
+        <option value="">Faixa Azul</option>
+        <option value="">Faixa Roxa</option>
+        <option value="">Faixa Marrom</option>
+        <option value="">Faixa Preta</option>
+      </select>
+      <div>
+        <label for="fem">
+          <input type="checkbox" name="genero" id="fem">
+          Feminino
+        </label>
+        <label for="masc">
+          <input type="checkbox" name="genero" id="masc">
+          Masculino
+          </span>
+
+
+      </div>
+      <input type="button" value="Cadastrar aluno" class="botao-Cadastro" data-AddAluno>
+    </form>
+  </div>
+
+
+  <section class="tela--usuario">
+    <div class="container__user--nav">
+
+
+      <div class="box__filtros ">
+        <div class="box__filtos--botaoAcesso">
+          <input type="button" class="filtros__botao" value="Filtro de Alunos" data-botaoFiltros>
+          <input type="button" class="filtros__botao" value="Marcar todos Alunos" data-botaoMarcarTodos>
+          <input type="button" class="filtros__botao" value="Mostrar no mapa" data-botaoDemarcacao>
+        </div>
+        <div class="box__filtros--componentes display--none" data-filtosComponentes>
+          <div>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade">
+          </div>
+          <div>
+            <label>Genero:</label>
+            <div>
+              <input type="radio" name="genero" id="masculino">
+              <label for="masculino">Masculino</label>
+
+              <input type="radio" name="genero" id="feminino">
+              <label for="feminino">Feminino</label>
+            </div>
+            <div>
+              <label>Graduação:</label>
+              <div style="display: flex; flex-direction:column;">
+                <div>
+                  <input type="checkbox" name="" id="Branca">
+                  <label for="Branca"> Faixa Branca</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="" id="Azul">
+                  <label for="Azul">Faixa Azul</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="" id="Roxa">
+                  <label for="Roxa">Faixa Roxa</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="" id="Marrom">
+                  <label for="Marrom">Faixa Marrom</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="" id="Preta">
+                  <label for="Preta">Faixa Preta</label>
+                </div>
+                <div>
+                  <input type="button" value="Iniciar Filtro">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="box__alunos">
+        <ul data-listaAlunos class="box__alunos--cards">
+
+
+
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div id="map" data-mapa class=" mapa--forma "></div>
+
+  </section>
+
+
+
+  <script src="./script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwrnE0tfOdJJSW279mK40ptwsqY9nY0A0&callback=initMap"
+    async defer></script>
+</body>
+
+</html>
